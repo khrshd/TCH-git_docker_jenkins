@@ -1,7 +1,11 @@
 pipeline {
     agent any 
-    docker { image 'hello-world:latest' }
     stages {
+        stage('Pull Docker image') {
+            steps {
+                sh 'docker build -t helloworld:latest'
+            }
+        }
         stage('Docker test') {            
             steps {
                 sh 'docker ps -a && docker images'
