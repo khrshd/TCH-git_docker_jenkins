@@ -2,9 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Docker') {
-            agent {
-                docker { image 'hellow-world:latest' }
-            }
+            docker { image 'hellow-world:latest' }
             steps {
                 sh 'docker ps -a && docker images'
             }
