@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull Docker image') {
             steps {
-                sh 'docker build -t helloworld:latest'
+                sh 'docker build -t hello-world:latest'
             }
         }
         stage('Docker test') {            
