@@ -4,11 +4,12 @@ pipeline {
         stage('Pull Docker image') {
             steps {
                 sh 'sudo docker run hello-world:latest'
-                sh 'sudo docker compose build'
+                sh 'docker ps -a && docker images'                
             }
         }
-        stage('Docker test') {            
+        stage('Dockerfile test') {            
             steps {
+                sh 'sudo docker build -t my-apache:latest .'
                 sh 'docker ps -a && docker images'
             }
         }
