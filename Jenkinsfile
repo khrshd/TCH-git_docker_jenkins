@@ -5,8 +5,7 @@ pipeline {
             steps {
                 sh 'docker stop $(docker ps -a -q)'
                 sh 'docker rm $(docker ps -a -q)'
-                sh 'docker images prune'
-                sh 'docker prune -a'
+                sh 'docker rmi $(docker images -a -q)
             }
         }
         stage('Pull Docker image') {
