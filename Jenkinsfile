@@ -1,6 +1,14 @@
 pipeline {
     agent any 
     stages {
+        stage('Cleaning up previous docker builds,images and containers'){
+            steps {
+                sh 'docker stop $(docker ps -a -q)'
+                sh 'docker container rm'
+                sh 'docker images prune'
+                sh 'docker prune -a'
+            }
+        }
         stage('Pull Docker image') {
             steps {
                 sh 'sudo docker run hello-world:latest'
