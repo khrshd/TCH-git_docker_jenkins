@@ -1,3 +1,4 @@
+///home/khurshid/TCH-git_docker_jenkins/Jenkinsfile
 pipeline {
     agent any 
     stages {
