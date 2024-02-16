@@ -18,8 +18,8 @@ pipeline {
             steps {
                 sh 'sudo docker build -t my-apache:latest .'
                 sh 'docker ps -a && docker images'
-                sh 'docker run -d --name my-httpd-cont -p 5001:80 my-apache:latest'
-                sh 'curl localhost:5002'
+                sh 'docker run -d --name my-httpd-cont3 -p 5003:80 my-apache:latest'
+                sh 'curl localhost:5003'
             }
         }
         stage('Test techs') {
