@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Cleaning up previous docker builds, images and containers'){
             steps {
-                sh 'docker stop $(docker ps -a -q)'
-                sh 'docker rm $(docker ps -a -q)'
+                //sh 'docker stop $(docker ps -a -q)'
+                //sh 'docker rm $(docker ps -a -q)'
                 sh 'docker rmi $(docker images -a -q)'
             }
         }
